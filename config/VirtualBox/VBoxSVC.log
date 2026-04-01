@@ -1,0 +1,48 @@
+00:00:00.000142 main     VirtualBox XPCOM Server 7.2.6 r172322 linux.amd64 (Mar 23 2026 21:40:55) release log
+00:00:00.000144 main     Log opened 2026-04-01T15:28:10.012297000Z
+00:00:00.000144 main     Build Type: release
+00:00:00.000146 main     OS Product: Linux
+00:00:00.000147 main     OS Release: 6.19.10-arch1-1
+00:00:00.000147 main     OS Version: #1 SMP PREEMPT_DYNAMIC Thu, 26 Mar 2026 19:20:28 +0000
+00:00:00.000171 main     DMI Product Name: Aspire A715-76G
+00:00:00.000178 main     DMI Product Version: V1.08
+00:00:00.000183 main     Firmware type: UEFI
+00:00:00.000825 main     Secure Boot: Disabled
+00:00:00.000851 main     Host RAM: 15690MB (15.3GB) total, 12056MB (11.7GB) available
+00:00:00.000854 main     Executable: /usr/lib/virtualbox/VBoxSVC
+00:00:00.000854 main     Process ID: 142424
+00:00:00.000854 main     Package type: LINUX_64BITS_GENERIC (OSE)
+00:00:00.005206 main     IPC socket path: /tmp/.vbox-frathol-ipc/ipcd
+00:00:00.006428 DCon01   VirtualBox: object creation starts
+00:00:00.006484 DCon01   Home directory: '/home/frathol/.config/VirtualBox'
+00:00:00.015990 DCon01   NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlan0: VBoxNetAdpCtl: ioctl failed: Operation not supported
+00:00:00.016672 DCon01   HostDnsMonitor: initializing
+00:00:00.016784 DCon01   NAT: resolv.conf: nameserver 192.168.1.1
+00:00:00.016789 DCon01   NAT: resolv.conf: FIXME: ignoring IPv6 zone %wlan0
+00:00:00.016791 DCon01   NAT: resolv.conf: nameserver fe80::1
+00:00:00.016798 DCon01   HostDnsMonitor: updating information
+00:00:00.016804 DCon01   HostDnsMonitor: old information
+00:00:00.016806 DCon01     no server entries
+00:00:00.016807 DCon01     no domain set
+00:00:00.016808 DCon01     no search string entries
+00:00:00.016809 DCon01   HostDnsMonitor: new information
+00:00:00.016810 DCon01     server 1: 192.168.1.1
+00:00:00.016811 DCon01     server 2: fe80::1%wlan0
+00:00:00.016813 DCon01     no domain set
+00:00:00.016814 DCon01     no search string entries
+00:00:00.018113 DCon01   VD: VDInit finished with VINF_SUCCESS
+00:00:00.019637 DCon01   OCI: Local config file '/home/frathol/.config/VirtualBox/oci_config' does not exist
+00:00:00.019651 DCon01   OCI: Original config file '/home/frathol/.oci/config' does not exist
+00:00:00.019652 DCon01   OCI: Reading profiles finished with status NS_OK
+00:00:00.019655 DCon01   ExtPack: Created cloud provider 'OCI' (hrc=NS_OK)
+00:00:00.019675 DCon01   VirtualBox: object created
+00:00:00.393486 DCon03   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={Could not load the Host USB Proxy service: VERR_NOT_FOUND}, preserve=false aResultDetail=0
+00:00:00.708803 DCon03   Saving settings file "/home/frathol/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+00:00:00.711933 DCon03   Finished saving settings file "/home/frathol/.config/VirtualBox/VirtualBox.xml"
+00:00:05.383388 DCon01   Saving settings file "/home/frathol/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+00:00:05.411428 DCon01   Finished saving settings file "/home/frathol/.config/VirtualBox/VirtualBox.xml"
+00:00:11.431033 main     VirtualBox: object deletion starts
+00:00:11.431699 main     HostDnsMonitor: shutting down ...
+00:00:11.432099 main     HostDnsMonitor: shut down
+00:00:11.443227 Watcher  ERROR [COM]: aRC=E_ACCESSDENIED (0x80070005) aIID={2ce10519-3c09-45d8-a12d-e887786146b7} aComponent={VirtualBoxWrap} aText={The object is not ready}, preserve=false aResultDetail=0
+00:00:11.443325 main     VirtualBox: object deleted
