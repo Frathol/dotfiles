@@ -1,0 +1,45 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", "JetBrainsMono NF", "Font Awesome 6 Free", "Font Awesome 5 Free", "Symbols Nerd Font", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: rgba(26, 27, 38, 0.7); /* Lebih transparan */
+    color: #c0caf5;
+    transition-property: background-color;
+    transition-duration: .5s;
+    /* Hilangkan border bawah bawaan GTK */
+    border-bottom: none;
+}
+
+/* Margin antar kapsul biar ada jarak dari pinggir layar */
+#cpu, #memory, #disk, #clock, #network, #pulseaudio, #battery, #tray, #workspaces , #custom-settings, #custom-power{
+    background-color: #24283b;
+    padding: 0 12px;
+    margin: 5px 3px;
+    border-radius: 10px;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    background-color: transparent;
+    color: #565f89;
+}
+
+#workspaces button.active {
+    color: #7aa2f7;
+    background-color: #2f3549; /* Warna beda buat workspace aktif */
+    border-radius: 10px;
+}
+
+#clock { color: #7aa2f7; font-weight: bold; }
+#network { color: #bb9af7; }
+#pulseaudio { color: #9ece6a; }
+#battery { color: #f7768e; }
+#tray { margin-right: 10px; }
+#cpu { color: #fb4934; }    /* Merah untuk CPU */
+#memory { color: #fabd2f; } /* Kuning untuk RAM */
+#disk { color: #83a598; }   /* Biru/Cyan untuk Disk */
+#custom-settings {color: #7aa2f7; margin-right: 5px;}
+#custom-power { color: #f7768e; /* Warna merah buat Power */ margin-right: 10px; font-size: 16px; /* Bikin agak besar dikit */ }
