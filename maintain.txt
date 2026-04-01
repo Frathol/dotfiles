@@ -1,0 +1,17 @@
+# Full Upgrade
+yay -Syu
+  or 
+pacman -Syu
+
+# Delete all cached packages that are not currently installed 
+sudo pacman -Sc
+
+# Or use 'paccache' 
+sudo paccache -rk3
+
+# See the package that is not needed by any other package
+pacman -Qdt
+
+# Hapus semuanya biar bersih
+# Delete all orphaned packages (packages that were installed as dependencies but are no longer required by any installed package)
+sudo pacman -Rs $(pacman -Qdtq)
