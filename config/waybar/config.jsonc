@@ -96,6 +96,12 @@
     "on-click": "wlogout",
     "tooltip": false
   },
+  "custom/vpn": {
+    "exec": "nmcli -t -f name,type connection show --active | grep vpn | cut -d ':' -f 1",
+    "interval": 5,
+    "format": "󰆧  {}",
+    "on-click": "nmcli connection down ProtonVPN_Japan"
+  },
   "tray": {
     "icon-size": 18,
     "spacing": 10
