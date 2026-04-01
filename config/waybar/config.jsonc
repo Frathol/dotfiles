@@ -1,76 +1,103 @@
 {
-    "layer": "top",
-    "position": "top",
-    "mod": "dock",
-    "exclusive": true,
-    "passthrough": false,
-    "gtk-layer-shell": true,
-    "height": 37,
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    "modules-center": ["clock"],
-    "modules-right": ["cpu", "memory", "disk", "pulseaudio", "network", "battery", "custom/power", "tray"],
-
-    "hyprland/workspaces": {
-        "format": "{icon}",
-        "on-click": "activate",
-        "format-icons": {
-            "1": "", 
-            "2": "", 
-            "3": "", 
-            "4": "󰙯", 
-            "urgent": "",
-            "active": "",
-            "default": ""
-        },
-        "sort-by-number": true
+  "layer": "top",
+  "position": "top",
+  "mod": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "height": 37,
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "cpu",
+    "memory",
+    "disk",
+    "pulseaudio",
+    "network",
+    "battery",
+    "custom/power",
+    "tray"
+  ],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "󰙯",
+      "urgent": "",
+      "active": "",
+      "default": ""
     },
-
-    "clock": {
-        "format": "  {:%H:%M  󰃭  %d/%m}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "on-click": "gnome-calendar" 
+    "sort-by-number": true
+  },
+  "clock": {
+    "format": "  {:%H:%M  󰃭  %d/%m}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "on-click": "gnome-calendar"
+  },
+  "network": {
+    "format-wifi": "  {essid}",
+    "format-ethernet": "󰈀  {ipaddr}/{cidr}",
+    "format-disconnected": "󰤮  Disconnected",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "tooltip-format-vpn": "  VPN: {vpn_proxy}",
+    "on-click": "nm-connection-editor"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "  Muted",
+    "format-icons": {
+      "default": [
+        "",
+        "",
+        ""
+      ]
     },
-
-    "network": {
-        "format-wifi": "  {essid}",
-        "format-ethernet": "󰈀  {ipaddr}/{cidr}",
-        "format-disconnected": "󰤮  Disconnected",
-        "on-click": "nm-connection-editor"
+    "on-click": "pavucontrol"
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
     },
-
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted": "  Muted",
-        "format-icons": {
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-icons": ["", "", "", "", ""],
-        "on-click": "gnome-power-statistics" // Membuka info baterai detail
-    },
-
-    "cpu": { "format": "󰻠 {usage}%", "interval": 2 },
-    "memory": { "format": "󰍛 {used:0.1f}G", "interval": 5 },
-    "disk": { "format": "󰋊 {percentage_used}%", "interval": 30 },
-
-    "custom/power": {
-        "format": " ",
-        "on-click": "wlogout",
-        "tooltip": false
-    },
-
-    "tray": {
-        "icon-size": 18,
-        "spacing": 10
-    }
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "on-click": "gnome-power-statistics" // Membuka info baterai detail
+  },
+  "cpu": {
+    "format": "󰻠 {usage}%",
+    "interval": 2
+  },
+  "memory": {
+    "format": "󰍛 {used:0.1f}G",
+    "interval": 5
+  },
+  "disk": {
+    "format": "󰋊 {percentage_used}%",
+    "interval": 30
+  },
+  "custom/power": {
+    "format": " ",
+    "on-click": "wlogout",
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  }
 }
