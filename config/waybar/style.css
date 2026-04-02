@@ -4,13 +4,29 @@
     font-weight: bold;
 }
 
-window#waybar {
-    background-color: rgba(26, 27, 38, 0.7); /* Lebih transparan */
+/*window#waybar {
+    background-color: rgba(26, 27, 38, 0.7);  
     color: #c0caf5;
     transition-property: background-color;
     transition-duration: .5s;
-    /* Hilangkan border bawah bawaan GTK */
     border-bottom: none;
+}
+*/
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0); /* Angka terakhir 0 = Transparan */
+    border-bottom: none;
+    color: #ffffff; /* Warna font tetap putih */
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+/* Biar modul di dalamnya tetap kelihatan, kasih background dikit di tiap modul */
+.modules-right, .modules-center, .modules-left {
+    background: rgba(20, 20, 20, 0.8); /* Kasih hitam transparan biar estetik */
+    border-radius: 10px;
+    padding: 0 10px;
+    margin: 5px;
 }
 
 /* Margin antar kapsul biar ada jarak dari pinggir layar */
