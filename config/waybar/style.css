@@ -1,61 +1,63 @@
+/* Palette Nord */
+@define-color nord_bg #2e3440;
+@define-color nord_fg #D8DEE9;
+@define-color nord_blue #81A1C1;
+@define-color nord_cyan #88C0D0;
+@define-color nord_green #A3BE8C;
+@define-color nord_yellow #EBCB8B;
+@define-color nord_orange #D08770;
+@define-color nord_red #BF616A;
+@define-color nord_purple #B48EAD;
+
 * {
-    font-family: "JetBrainsMono Nerd Font", "JetBrainsMono NF", "Font Awesome 6 Free", "Font Awesome 5 Free", "Symbols Nerd Font", sans-serif;
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
     font-size: 14px;
     font-weight: bold;
 }
 
-/*window#waybar {
-    background-color: rgba(26, 27, 38, 0.7);  
-    color: #c0caf5;
-    transition-property: background-color;
-    transition-duration: .5s;
-    border-bottom: none;
-}
-*/
-
 window#waybar {
-    background-color: rgba(0, 0, 0, 0); /* Angka terakhir 0 = Transparan */
-    border-bottom: none;
-    color: #ffffff; /* Warna font tetap putih */
-    transition-property: background-color;
-    transition-duration: .5s;
+    background-color: rgba(0, 0, 0, 0); /* Transparan penuh agar wallpaper kelihatan */
+    color: @nord_fg;
 }
 
-/* Biar modul di dalamnya tetap kelihatan, kasih background dikit di tiap modul */
+/* Container Kapsul Utama */
 .modules-right, .modules-center, .modules-left {
-    background: rgba(20, 20, 20, 0.8); /* Kasih hitam transparan biar estetik */
-    border-radius: 10px;
-    padding: 0 10px;
+    background: rgba(46, 52, 64, 0.9); /* Nord Polar Night */
+    border-radius: 12px;
+    padding: 2px 8px;
     margin: 5px;
 }
 
-/* Margin antar kapsul biar ada jarak dari pinggir layar */
-#cpu, #memory, #disk, #clock, #network, #pulseaudio, #battery, #tray, #workspaces , #custom-settings, #custom-power{
-    background-color: #24283b;
-    padding: 0 12px;
-    margin: 5px 3px;
-    border-radius: 10px;
+/* Gaya Umum tiap Modul */
+#cpu, #memory, #disk, #clock, #network, #pulseaudio, #battery, #tray, #workspaces, #custom-power, #custom-vpn {
+    padding: 0 10px;
+    margin: 4px 2px;
 }
 
+/* Warna Spesifik Nord untuk tiap Modul */
 #workspaces button {
-    padding: 0 8px;
-    background-color: transparent;
-    color: #565f89;
+    color: #4C566A; /* Nord Dark Gray */
+    padding: 0 5px;
 }
 
 #workspaces button.active {
-    color: #7aa2f7;
-    background-color: #2f3549; /* Warna beda buat workspace aktif */
-    border-radius: 10px;
+    color: @nord_cyan;
 }
 
-#clock { color: #7aa2f7; font-weight: bold; }
-#network { color: #bb9af7; }
-#pulseaudio { color: #9ece6a; }
-#battery { color: #f7768e; }
-#tray { margin-right: 10px; }
-#cpu { color: #fb4934; }    /* Merah untuk CPU */
-#memory { color: #fabd2f; } /* Kuning untuk RAM */
-#disk { color: #83a598; }   /* Biru/Cyan untuk Disk */
-#custom-settings {color: #7aa2f7; margin-right: 5px;}
-#custom-power { color: #f7768e; /* Warna merah buat Power */ margin-right: 10px; font-size: 16px; /* Bikin agak besar dikit */ }
+#workspaces button.urgent {
+    color: @nord_red;
+}
+
+#clock { color: @nord_fg; }
+#cpu { color: @nord_red; }
+#memory { color: @nord_yellow; }
+#disk { color: @nord_orange; }
+#pulseaudio { color: @nord_green; }
+#network , #custom-vpn{ color: #88C0D0; min-width: 100px; }
+#battery { color: @nord_cyan; }
+#custom-power { color: @nord_red; margin-right: 5px; }
+
+/* Menghilangkan background kotak-kotak agar lebih menyatu (Flat Design) */
+#cpu, #memory, #disk, #clock, #network, #pulseaudio, #battery, #tray, #workspaces, #custom-power {
+    background-color: transparent;
+}
