@@ -56,6 +56,18 @@ window#waybar {
 #network , #custom-vpn{ color: #88C0D0; min-width: 100px; }
 #battery { color: @nord_cyan; }
 #custom-power { color: @nord_red; margin-right: 5px; }
+#bluetooth {
+    color: #81a1c1;
+    padding: 0 10px;
+}
+
+#bluetooth.connected {
+    color: #a3be8c;
+}
+
+#bluetooth.disabled {
+    color: #bf616a;
+}
 
 /* Menghilangkan background kotak-kotak agar lebih menyatu (Flat Design) */
 #cpu, #memory, #disk, #clock, #network, #pulseaudio, #battery, #tray, #workspaces, #custom-power {

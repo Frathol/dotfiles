@@ -18,6 +18,7 @@
     "memory",
     // "disk",
     "pulseaudio",
+    "bluetooth",
     "network",
     "battery",
     "custom/power",
@@ -61,6 +62,15 @@
       ]
     },
     "on-click": "pavucontrol"
+  },
+  "bluetooth": {
+    "format": " {status}",
+    "format-disabled": "󰂲 off",
+    "format-connected": " {device_alias}",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "blueman-manager"
   },
   "battery": {
     "states": {
