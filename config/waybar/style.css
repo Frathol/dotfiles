@@ -1,75 +1,105 @@
-/* Palette Nord */
-@define-color nord_bg #2e3440;
-@define-color nord_fg #D8DEE9;
-@define-color nord_blue #81A1C1;
-@define-color nord_cyan #88C0D0;
-@define-color nord_green #A3BE8C;
-@define-color nord_yellow #EBCB8B;
-@define-color nord_orange #D08770;
-@define-color nord_red #BF616A;
-@define-color nord_purple #B48EAD;
-
 * {
-    font-family: "JetBrainsMono Nerd Font", sans-serif;
-    font-size: 14px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+}
+
+#window {
+    color: #88c0d0;
     font-weight: bold;
+    padding: 0 10px;
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0); /* Transparan penuh agar wallpaper kelihatan */
-    color: @nord_fg;
+    background-color: rgba(46, 52, 64, 0.9);
+    border-bottom: 2px solid rgba(129, 161, 193, 0.3);
+    color: #eceff4;
 }
 
-/* Container Kapsul Utama */
-.modules-right, .modules-center, .modules-left {
-    background: rgba(46, 52, 64, 0.9); /* Nord Polar Night */
-    border-radius: 12px;
-    padding: 2px 8px;
-    margin: 5px;
-}
-
-/* Gaya Umum tiap Modul */
-#cpu, #memory, #disk, #clock, #network, #pulseaudio, #battery, #tray, #workspaces, #custom-power, #custom-vpn {
-    padding: 0 10px;
-    margin: 4px 2px;
-}
-
-/* Warna Spesifik Nord untuk tiap Modul */
 #workspaces button {
-    color: #4C566A; /* Nord Dark Gray */
-    padding: 0 5px;
+    padding: 0 8px;
+    margin: 4px 2px;
+    background-color: transparent;
+    color: #4c566a;
+    transition: all 0.3s ease;
 }
 
 #workspaces button.active {
-    color: @nord_cyan;
+    color: #88c0d0;
+    background-color: #3b4252;
+    border-radius: 10px;
+    box-shadow: inset 0 -2px #88c0d0;
 }
 
-#workspaces button.urgent {
-    color: @nord_red;
+#workspaces button:hover {
+    background-color: rgba(129, 161, 193, 0.2);
+    color: #d8dee9;
 }
 
-#clock { color: @nord_fg; }
-#cpu { color: @nord_red; }
-#memory { color: @nord_yellow; }
-#disk { color: @nord_orange; }
-#pulseaudio { color: @nord_green; }
-#network , #custom-vpn{ color: #88C0D0; min-width: 100px; }
-#battery { color: @nord_cyan; }
-#custom-power { color: @nord_red; margin-right: 5px; }
-#bluetooth {
-    color: #81a1c1;
-    padding: 0 10px;
+/* Styling Pill untuk setiap modul */
+#clock, #network, #bluetooth, #pulseaudio, #cpu, #memory, #temperature, #battery, #custom-system {
+    padding: 0 15px;
+    margin: 5px 3px;
+    background-color: #3b4252;
+    border-radius: 15px;
 }
 
-#bluetooth.connected {
+/* Hover Effect */
+#clock:hover, #custom-system:hover {
+    background-color: #4c566a;
+    transition: 0.3s;
+}
+
+#cpu { color: #81a1c1; }
+#memory { color: #a3be8c; }
+#temperature { color: #ebcb8b; }
+#battery {
     color: #a3be8c;
 }
 
-#bluetooth.disabled {
-    color: #bf616a;
+#battery.charging, #battery.plugged {
+    color: #88c0d0;
 }
 
-/* Menghilangkan background kotak-kotak agar lebih menyatu (Flat Design) */
-#cpu, #memory, #disk, #clock, #network, #pulseaudio, #battery, #tray, #workspaces, #custom-power {
-    background-color: transparent;
+#battery.warning:not(.charging) {
+    color: #ebcb8b;
+}
+
+#battery.critical:not(.charging) {
+    color: #bf616a;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #bf616a;
+        color: #eceff4;
+    }
+}
+#tray {
+    padding: 0 10px;
+}
+
+tooltip {
+    background: rgba(46, 52, 64, 0.95);
+    border: 1px solid #81a1c1;
+    border-radius: 12px;
+}
+
+tooltip label {
+    color: #eceff4;
+    padding: 10px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #bf616a;
 }

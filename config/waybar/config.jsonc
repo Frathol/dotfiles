@@ -5,7 +5,7 @@
   "exclusive": true,
   "passthrough": false,
   "gtk-layer-shell": true,
-  "height": 37,
+  "height": 40,
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/window"
@@ -14,54 +14,129 @@
     "clock"
   ],
   "modules-right": [
-    "cpu",
-    "memory",
-    // "disk",
-    "pulseaudio",
-    "bluetooth",
     "network",
-    "battery",
-    "custom/power",
+    "bluetooth",
+    "group/hardware",
+    "pulseaudio",
     "tray"
   ],
   "hyprland/workspaces": {
-    "format": "{icon}",
+    "disable-scroll": true,
+    "all-outputs": true,
+    "active-only": false,
     "on-click": "activate",
+    "format": "{icon}",
     "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "󰙯",
+      "1": "", // Terminal (Kitty)
+      "2": "", // Browser (Firefox)
+      "3": "", // Code (Neovim/VSCode)
+      "4": "󰙯", // Communication (Discord)
+      "5": "", // Games (Steam)
+      "6": "󰓓", // Spotify/Music
+      "7": "󱓷", // GNS3 / Networking
       "urgent": "",
-      "active": "",
+      "focused": "",
       "default": ""
-    },
-    "sort-by-number": true
+    }
+    // "persistent-workspaces": {
+    //   "1": [],
+    //   "2": [],
+    //   "3": [],
+    //   "4": []
+    // }
   },
   "clock": {
-    "format": "  {:%H:%M  󰃭  %d/%m}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "on-click": "gnome-calendar"
+    "format": "  {:%H:%M}",
+    "format-alt": "󰃭  {:%A, %d %B}",
+    "tooltip-format": "<span size='16pt' font='JetBrainsMono Nerd Font'><tt>{calendar}</tt></span>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#88c0d0'><b>{}</b></span>",
+        "days": "<span color='#d8dee9'><b>{}</b></span>",
+        "weekdays": "<span color='#81a1c1'><b>{}</b></span>",
+        "today": "<span color='#bf616a'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click": "gnome-calendar",
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "group/hardware": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-memory",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/system", // Ikon Utama
+      "cpu",
+      "memory",
+      "temperature",
+      "battery"
+    ]
+  },
+  "custom/system": {
+    "format": "󰍛",
+    "tooltip": false
+  },
+  "cpu": {
+    "interval": 1,
+    "format": " {usage}%",
+    "on-click": "kitty -e btop"
+  },
+  "memory": {
+    "format": "󰍛 {used:0.1f}G",
+    "interval": 5
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": "󱐋 {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-icons": [
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
+    "on-click": "gnome-power-statistics",
+    "tooltip-format": "{timeTo}"
   },
   "network": {
-    "interval": 1, // Update tiap 1 detik agar pergerakan speed-nya terasa
-    "format-wifi": "󰇚 {bandwidthDownBytes} 󰕒 {bandwidthUpBytes}",
-    "format-ethernet": "󰈀 {bandwidthDownBytes} 󰕒 {bandwidthUpBytes}",
-    "format-disconnected": "󰤮 ", // Minimalis saat mati
-    "tooltip-format": "{essid} / {ipaddr}", // Info WiFi tetap ada kalau kursor diarahkan ke situ
-    "on-click": "nm-connection-editor"
-  },
-  "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-muted": "  Muted",
-    "format-icons": {
-      "default": [
-        "",
-        "",
-        ""
-      ]
-    },
-    "on-click": "pavucontrol"
+    "format-wifi": " ",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰖪",
+    "tooltip-format": "󰩟 {ipaddr}/{cidr}\n {essid} ({signalStrength}%)\n󰇚 {bandwidthDownBytes}  󰕒 {bandwidthUpBytes}",
+    "on-click": "nm-connection-editor",
+    "interval": 2
   },
   "bluetooth": {
     "format": " {status}",
@@ -72,48 +147,16 @@
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "on-click": "blueman-manager"
   },
-  "battery": {
-    "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 15
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "default": [
+        "",
+        "",
+        ""
+      ]
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "on-click": "gnome-power-statistics" // Membuka info baterai detail
-  },
-  "cpu": {
-    "format": "󰻠 {usage}%",
-    "interval": 2
-  },
-  "memory": {
-    "format": "󰍛 {used:0.1f}G",
-    "interval": 5
-  },
-  "disk": {
-    "format": "󰋊 {percentage_used}%",
-    "interval": 30
-  },
-  "custom/power": {
-    "format": " ",
-    "on-click": "wlogout",
-    "tooltip": false
-  },
-  "custom/vpn": {
-    "exec": "nmcli -t -f name,type connection show --active | grep vpn | cut -d ':' -f 1",
-    "interval": 5,
-    "format": "󰆧  {}",
-    "on-click": "nmcli connection down ProtonVPN_Japan"
-  },
-  "tray": {
-    "icon-size": 18,
-    "spacing": 10
+    "on-click": "pavucontrol"
   }
 }
