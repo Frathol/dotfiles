@@ -16,7 +16,7 @@
   "modules-right": [
     "cpu",
     "memory",
-    "disk",
+    // "disk",
     "pulseaudio",
     "network",
     "battery",
