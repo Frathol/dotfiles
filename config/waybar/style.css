@@ -85,6 +85,21 @@ window#waybar {
     padding: 0 10px;
 }
 
+#custom-power {
+    /* color: #bf616a; */
+    background-color: #3b4252;
+    border-radius: 15px;
+    padding: 0 15px;
+    margin: 5px 3px;
+    font-size: 16px;
+}
+
+#custom-power:hover {
+    background-color: #bf616a;
+    color: #eceff4;
+    transition: 0.3s;
+}
+
 tooltip {
     background: rgba(46, 52, 64, 0.95);
     border: 1px solid #81a1c1;

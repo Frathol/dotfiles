@@ -18,7 +18,8 @@
     "bluetooth",
     "group/hardware",
     "pulseaudio",
-    "tray"
+    "tray",
+    "custom/power"
   ],
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -158,5 +159,10 @@
       ]
     },
     "on-click": "pavucontrol"
-  }
+  },
+  "custom/power": {
+    "format": "",
+    "on-click": "wlogout",
+    "tooltip": false
+  },
 }
