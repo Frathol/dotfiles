@@ -1,0 +1,14 @@
+width=450
+height=400
+location=center
+show=drun
+prompt=Search Apps...
+filter_rate=100
+allow_images=true
+image_size=24
+no_actions=true
+halign=fill
+orientation=vertical
+content_halign=fill
+insensitive=true
+allow_markup=true
