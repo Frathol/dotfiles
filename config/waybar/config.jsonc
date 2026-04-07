@@ -27,24 +27,36 @@
     "active-only": false,
     "on-click": "activate",
     "format": "{icon}",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
     "format-icons": {
-      "1": "", // Terminal (Kitty)
-      "2": "", // Browser (Firefox)
-      "3": "", // Code (Neovim/VSCode)
-      "4": "󰙯", // Communication (Discord)
-      "5": "", // Games (Steam)
-      "6": "󰓓", // Spotify/Music
-      "7": "󱓷", // GNS3 / Networking
+      // Kondisi Status
       "urgent": "",
-      "focused": "",
-      "default": ""
+      "active": "",
+      "default": "",
+      "empty": ""
+    },
+    "window-rewrite": {
+      // General Tools
+      "class<kitty>": "",
+      "class<firefox>": "",
+      "class<code-oss>": "",
+      "class<discord>": "󰙯",
+      "class<spotify>": "󰓓",
+      "class<steam>": "",
+      "class<burp-StartBurp>": "󰇧",
+      "class<burpsuite>": "󰇧",
+      "class<zaproxy>": "󱚧",
+      "class<maltego.*>": "󱁉",
+      "class<wireshark-gtk>": "󱚠",
+      "class<wireshark>": "󱚠",
+      "class<gns3.*>": "󱓷",
+      "class<nm-connection-editor>": "󰈀",
+      "class<.*openvpn.*>": "󰖂",
+      "class<forticlient>": "󰖂",
+      "class<dbeaver>": "󰆼",
+      "class<mysql-workbench-bin>": "󰆼"
     }
-    // "persistent-workspaces": {
-    //   "1": [],
-    //   "2": [],
-    //   "3": [],
-    //   "4": []
-    // }
   },
   "clock": {
     "format": "  {:%H:%M}",
