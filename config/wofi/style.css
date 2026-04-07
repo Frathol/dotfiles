@@ -1,50 +1,107 @@
-window {
+ window {
+
     margin: 0px;
+
     border: 2px solid #81a1c1; /* Nord Frost Blue */
+
     background-color: #2e3440; /* Nord Deep Dark */
+
     border-radius: 15px;
+
     font-family: "JetBrainsMono Nerd Font";
+
     font-size: 14px;
+
 }
+
 
 #outer-box {
+
     margin: 10px;
+
     border: none;
+
     background-color: transparent;
+
 }
+
 
 #input {
+
     margin: 5px;
+
     border: none;
+
     color: #eceff4; /* Nord Snow White */
+
     background-color: #3b4252; /* Nord Lighter Dark */
+
     border-radius: 10px;
+
     padding: 10px;
+
 }
+
 
 #inner-box {
+
     margin: 5px;
+
     border: none;
+
     background-color: transparent;
+
 }
+
 
 #scroll {
+
     margin: 5px;
+
     border: none;
+
 }
+
 
 #text {
+
     margin: 5px;
+
     border: none;
+
     color: #d8dee9;
+
 }
+
 
 #entry:selected {
+
     background-color: #4c566a; /* Nord Highlight */
+
     border-radius: 10px;
+
 }
 
+
 #text:selected {
+
     color: #88c0d0; /* Nord Cyan Frost */
+
     font-weight: bold;
+
 }
+
+
+#img {
+
+    margin-right: 15px;
+
+    background-color: transparent;
+
+}
+
+
+#entry {
+
+    padding: 10px; 
+  }
