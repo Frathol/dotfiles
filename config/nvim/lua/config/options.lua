@@ -63,6 +63,7 @@ opt.completeopt = "menu,menuone,noselect"
 opt.conceallevel = 2 -- Hide * markup for bold and italic, but not markers with substitutions
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
 opt.cursorline = true -- Enable highlighting of the current line
+opt.guicursor = "a:block"
 opt.expandtab = true -- Use spaces instead of tabs
 opt.fillchars = {
   foldopen = "",
