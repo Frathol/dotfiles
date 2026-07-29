@@ -103,23 +103,11 @@ local firefox = "firefox"
 
 -- exec-once = swayosd-server
 
-
-
-
-
 -- 2. Input & Service Ringan
-
-
-
 
 -- 3. Service Berat
 
-
-
-
 -- exec-once = /usr/lib/xdg-desktop-portal-hyprland &
-
-
 
 --############################
 
@@ -194,64 +182,64 @@ hl.env("_JAVA_AWT_WM_NONREPARENTING", 1)
 -- https://wiki.hypr.land/Configuring/Variables/#general
 
 hl.config({
-    general = {
-        gaps_in = 2,
-        gaps_out = 4,
-        border_size = 2,
-        -- https://wiki.hypr.land/Configuring/Variables/#variable-types for info about colors
-        -- col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
-        -- col.inactive_border = rgba(595959aa)
-        -- # Warna Aktif: Frost Blue (Solid)
-        -- col.active_border = rgba(81a1c1ff) 
-        -- # Warna Inaktif: Deep Charcoal
-        -- col.inactive_border = rgba(2e3440ff)
-        -- Set to true enable resizing windows by clicking and dragging on borders and gaps
-        resize_on_border = false,
-        -- Please see https://wiki.hypr.land/Configuring/Tearing/ before you turn this on
-        allow_tearing = false,
-        layout = "dwindle",
-        col = {
-            active_border = "rgba(ffffff33)",
-            inactive_border = "rgba(00000000)",
-        },
-    },
+	general = {
+		gaps_in = 2,
+		gaps_out = 4,
+		border_size = 2,
+		-- https://wiki.hypr.land/Configuring/Variables/#variable-types for info about colors
+		-- col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
+		-- col.inactive_border = rgba(595959aa)
+		-- # Warna Aktif: Frost Blue (Solid)
+		-- col.active_border = rgba(81a1c1ff)
+		-- # Warna Inaktif: Deep Charcoal
+		-- col.inactive_border = rgba(2e3440ff)
+		-- Set to true enable resizing windows by clicking and dragging on borders and gaps
+		resize_on_border = false,
+		-- Please see https://wiki.hypr.land/Configuring/Tearing/ before you turn this on
+		allow_tearing = false,
+		layout = "dwindle",
+		col = {
+			active_border = "rgba(ffffff33)",
+			inactive_border = "rgba(00000000)",
+		},
+	},
 })
 
 -- https://wiki.hypr.land/Configuring/Variables/#decoration
 
 hl.config({
-    decoration = {
-        rounding = 0,
-        rounding_power = 2,
-        -- Change transparency of focused and unfocused windows
-        active_opacity = 1.0,
-        inactive_opacity = 1.0,
-        shadow = {
-            enabled = true,
-            range = 4,
-            render_power = 3,
-            color = "rgba(1a1a1aee)",
-        },
-        -- https://wiki.hypr.land/Configuring/Variables/#blur
-        blur = {
-            enabled = true,
-            size = 6,
-            passes = 2,
-            vibrancy = 0.1696,
-        },
-    },
+	decoration = {
+		rounding = 0,
+		rounding_power = 2,
+		-- Change transparency of focused and unfocused windows
+		active_opacity = 1.0,
+		inactive_opacity = 1.0,
+		shadow = {
+			enabled = true,
+			range = 4,
+			render_power = 3,
+			color = "rgba(1a1a1aee)",
+		},
+		-- https://wiki.hypr.land/Configuring/Variables/#blur
+		blur = {
+			enabled = true,
+			size = 6,
+			passes = 2,
+			vibrancy = 0.1696,
+		},
+	},
 })
 
 -- https://wiki.hypr.land/Configuring/Variables/#animations
 
 hl.config({
-    animations = {
-        enabled = { true, "please:)" },
-        -- Default curves, see https://wiki.hypr.land/Configuring/Animations/#curves
-        --        NAME,           X0,   Y0,   X1,   Y1
-        -- Default animations, see https://wiki.hypr.land/Configuring/Animations/
-        --           NAME,          ONOFF, SPEED, CURVE,        [STYLE]
-    },
+	animations = {
+		enabled = true,
+		-- Default curves, see https://wiki.hypr.land/Configuring/Animations/#curves
+		--        NAME,           X0,   Y0,   X1,   Y1
+		-- Default animations, see https://wiki.hypr.land/Configuring/Animations/
+		--           NAME,          ONOFF, SPEED, CURVE,        [STYLE]
+	},
 })
 
 -- Ref https://wiki.hypr.land/Configuring/Workspace-Rules/
@@ -305,32 +293,32 @@ hl.config({
 -- See https://wiki.hypr.land/Configuring/Dwindle-Layout/ for more
 
 hl.config({
-    dwindle = {
-        -- pseudotile have been removed in favor of the more versatile "togglessplit" command, but can still enable it by uncommenting the line below. When enabled, it makes dwindle pseudotile by default, and can toggle floating mode with mainMod + J (or whatever bind it to)
-        -- pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-        preserve_split = true,
-    },
+	dwindle = {
+		-- pseudotile have been removed in favor of the more versatile "togglessplit" command, but can still enable it by uncommenting the line below. When enabled, it makes dwindle pseudotile by default, and can toggle floating mode with mainMod + J (or whatever bind it to)
+		-- pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+		preserve_split = true,
+	},
 })
 
 -- See https://wiki.hypr.land/Configuring/Master-Layout/ for more
 
 hl.config({
-    master = {
-        new_status = "master",
-    },
+	master = {
+		new_status = "master",
+	},
 })
 
 -- https://wiki.hypr.land/Configuring/Variables/#misc
 
 hl.config({
-    misc = {
-        force_default_wallpaper = -1,
-        -- Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo = true,
-        -- If true disables the random hyprland logo / anime girl background. :(
-        disable_splash_rendering = true,
-        force_default_wallpaper = 0,
-    },
+	misc = {
+		force_default_wallpaper = -1,
+		-- Set to 0 or 1 to disable the anime mascot wallpapers
+		disable_hyprland_logo = true,
+		-- If true disables the random hyprland logo / anime girl background. :(
+		disable_splash_rendering = true,
+		force_default_wallpaper = 0,
+	},
 })
 
 --############
@@ -342,35 +330,34 @@ hl.config({
 -- https://wiki.hypr.land/Configuring/Variables/#input
 
 hl.config({
-    input = {
-        kb_layout = "us",
-        kb_variant = {  },
-        kb_model = {  },
-        kb_options = {  },
-        kb_rules = {  },
-        follow_mouse = 1,
-        sensitivity = 0.6,
-        -- -1.0 - 1.0, 0 means no modification.
-        touchpad = {
-            natural_scroll = true,
-            tap-to-click = true,
-            scroll_factor = 0.7,
-        },
-        -- Fitur Middle Click Scroll (Emulate Wheel)
-        accel_profile = "flat",
-        force_no_accel = false,
-    },
+	input = {
+		kb_layout = "us",
+		kb_variant = "",
+		kb_model = "",
+		kb_options = "",
+		kb_rules = "",
+		follow_mouse = 1,
+		sensitivity = 0.6,
+		-- -1.0 - 1.0, 0 means no modification.
+		touchpad = {
+			natural_scroll = true,
+			tap_to_click = true,
+			scroll_factor = 0.7,
+		},
+		-- Fitur Middle Click Scroll (Emulate Wheel)
+		accel_profile = "flat",
+		force_no_accel = false,
+	},
 })
 
 -- See https://wiki.hypr.land/Configuring/Gestures
 
 -- TODO: manual review: gesture = 3, "horizontal", "workspace"
 -- See https://wiki.hypr.land/Configuring/Gestures
-hl.config({
-    gestures = {
-        workspace_swipe = true,
-        workspace_swipe_fingers = 3,
-    },
+hl.gesture({
+	fingers = 3,
+	direction = "horizontal",
+	action = "workspace",
 })
 
 -- Example per-device config
@@ -378,8 +365,8 @@ hl.config({
 -- See https://wiki.hypr.land/Configuring/Keywords/#per-device-input-configs for more
 
 hl.device({
-    name = "epic-mouse-v1",
-    sensitivity = -0.5,
+	name = "epic-mouse-v1",
+	sensitivity = -0.5,
 })
 
 --##################
@@ -400,7 +387,10 @@ hl.bind(mainMod .. " + " .. "Q", hl.dsp.exec_cmd("kitty"))
 
 hl.bind(mainMod .. " + " .. "C", hl.dsp.window.close())
 
-hl.bind(mainMod .. " + " .. "M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"))
+hl.bind(
+	mainMod .. " + " .. "M",
+	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit")
+)
 
 hl.bind(mainMod .. " + " .. "E", hl.dsp.exec_cmd("thunar"))
 
@@ -426,9 +416,12 @@ hl.bind(mainMod .. " + " .. "L", hl.dsp.exec_cmd("hyprlock"))
 
 hl.bind("CTRL" .. " + " .. mainMod .. " + " .. "P", hl.dsp.exec_cmd("nwg-displays"))
 
--- Clipboard History (Super + Shift + V) 
+-- Clipboard History (Super + Shift + V)
 
-hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "V", hl.dsp.exec_cmd("cliphist list| wofi --dmenu| cliphist decode| wl-copy"))
+hl.bind(
+	mainMod .. " + " .. "SHIFT" .. " + " .. "V",
+	hl.dsp.exec_cmd("cliphist list| wofi --dmenu| cliphist decode| wl-copy")
+)
 
 -- Super + Shift + S = Pilih area (seperti di Windows/Mac) -> Langsung Edit & Ambil koordinat dulu, simpan ke file, ambil gambar, lalu PAKSA MATI slurp
 
@@ -444,13 +437,23 @@ hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "V", hl.dsp.exec_cmd("cliphist l
 
 -- bind = $mainMod ALT, S, exec, grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +'%Y-%m-%d-%H%M%S_screenshot.png') && notify-send "Area Screenshot Saved"
 
-hl.bind(mainMod .. " + " .. "ALT" .. " + " .. "S", hl.dsp.exec_cmd("grim -g $(slurp)-| wl-copy && grim -g $(slurp) ~/Pictures/Screenshots/$(date +'%Y-%m-%d-%H%M%S_screenshot.png') && notify-send Area Screenshot Copied & Saved"))
+hl.bind(
+	mainMod .. " + " .. "ALT" .. " + " .. "S",
+	hl.dsp.exec_cmd(
+		"grim -g $(slurp)-| wl-copy && grim -g $(slurp) ~/Pictures/Screenshots/$(date +'%Y-%m-%d-%H%M%S_screenshot.png') && notify-send Area Screenshot Copied & Saved"
+	)
+)
 
 -- Super + Print (PrtSc) = Screenshot seluruh layar -> Simpan ke folder Pictures
 
 -- bind = $mainMod, Print, exec, grim ~/Pictures/Screenshots/$(date +'%Y-%m-%d-%H%M%S_screenshot.png') && notify-send "Full Screenshot Saved"
 
-hl.bind(mainMod .. " + " .. "Print", hl.dsp.exec_cmd("grim-| wl-copy && grim ~/Pictures/Screenshots/$(date +'%Y-%m-%d-%H%M%S_screenshot.png') && notify-send Full Screenshot Copied & Saved"))
+hl.bind(
+	mainMod .. " + " .. "Print",
+	hl.dsp.exec_cmd(
+		"grim-| wl-copy && grim ~/Pictures/Screenshots/$(date +'%Y-%m-%d-%H%M%S_screenshot.png') && notify-send Full Screenshot Copied & Saved"
+	)
+)
 
 -- Volume dengan UI Pop-up Modern
 
@@ -470,13 +473,16 @@ hl.bind(mainMod .. " + " .. "Print", hl.dsp.exec_cmd("grim-| wl-copy && grim ~/P
 
 -- bind = , XF86MonBrightnessUp, exec, brightnessctl set +5%
 
--- Ubah 5% (0.05) atau 1% (0.01) sesuai selera 
+-- Ubah 5% (0.05) atau 1% (0.01) sesuai selera
 
 -- bind = , XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
 
 -- bind = , XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && swayosd-client --output-volume mute-toggle"))
+hl.bind(
+	"XF86AudioMute",
+	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && swayosd-client --output-volume mute-toggle")
+)
 
 -- Kalau pakai pactl (Pulseaudio):
 
@@ -597,49 +603,49 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 -- Example windowrules that are useful
 
 hl.window_rule({
-    name  = "suppress-maximize-events",
-    match = {
-        class = ".*",
-    },
-    suppress_event = "maximize",
+	name = "suppress-maximize-events",
+	match = {
+		class = ".*",
+	},
+	suppress_event = "maximize",
 })
 
 hl.window_rule({
-    name  = "fix-xwayland-drags",
-    match = {
-        class = "^$",
-        title = "^$",
-        xwayland = true,
-        float = true,
-        fullscreen = false,
-        pin = false,
-    },
-    no_focus = true,
+	name = "fix-xwayland-drags",
+	match = {
+		class = "^$",
+		title = "^$",
+		xwayland = true,
+		float = true,
+		fullscreen = false,
+		pin = false,
+	},
+	no_focus = true,
 })
 
 -- Hyprland-run windowrule
 
 hl.window_rule({
-    name  = "move-hyprland-run",
-    match = {
-        class = "hyprland-run",
-    },
-    move = { 20, "monitor_h-120" },
-    float = true,
+	name = "move-hyprland-run",
+	match = {
+		class = "hyprland-run",
+	},
+	move = { 20, "monitor_h-120" },
+	float = true,
 })
 
 -- Autostart
 hl.on("hyprland.start", function()
-    hl.exec_cmd("hyprpaper")
-    hl.exec_cmd("sleep 1 && hyprctl hyprpaper wallpaper ,/home/frathol/Pictures/Wallpaper/current_wallpaper.png")
-    hl.exec_cmd("waybar")
-    hl.exec_cmd("blueman-applet")
-    hl.exec_cmd("nm-applet --indicator &")
-    hl.exec_cmd("wl-paste --type text --watch cliphist store")
-    hl.exec_cmd("wl-paste --type image --watch cliphist store")
-    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-    hl.exec_cmd("systemctl --user start graphical-session.target")
-    hl.exec_cmd("~/.config/hypr/xdg.sh")
-    hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
-    hl.exec_cmd("mako &")
+	hl.exec_cmd("hyprpaper")
+	hl.exec_cmd("sleep 1 && hyprctl hyprpaper wallpaper ,/home/frathol/Pictures/Wallpaper/current_wallpaper.png")
+	hl.exec_cmd("waybar")
+	hl.exec_cmd("blueman-applet")
+	hl.exec_cmd("nm-applet --indicator &")
+	hl.exec_cmd("wl-paste --type text --watch cliphist store")
+	hl.exec_cmd("wl-paste --type image --watch cliphist store")
+	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+	hl.exec_cmd("systemctl --user start graphical-session.target")
+	hl.exec_cmd("~/.config/hypr/xdg.sh")
+	hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
+	hl.exec_cmd("mako &")
 end)
