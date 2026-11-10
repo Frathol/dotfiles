@@ -1,0 +1,6 @@
+#!/home/frathol/.local/share/pipx/venvs/hyprconf2lua/bin/python -E
+import sys
+from hyprconf2lua.cli import main
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(main())

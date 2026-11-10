@@ -164,6 +164,7 @@ hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.local/bin/wallpicker.sh"))
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind("CTRL + " .. mainMod .. " + P", hl.dsp.exec_cmd("nwg-displays"))
+hl.bind(mainMod .. " + ALT + P", hl.dsp.exec_cmd("~/.local/bin/proyektor.sh"))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
 
 -- Clipboard History (Super + Shift + V)
