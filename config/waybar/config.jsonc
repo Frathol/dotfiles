@@ -6,36 +6,25 @@
   "passthrough": false,
   "gtk-layer-shell": true,
   "height": 40,
-  "modules-left": [
-    "hyprland/workspaces",
-    "hyprland/window"
-  ],
-  "modules-center": [
-    "clock"
-  ],
-  "modules-right": [
-    "network",
-    "bluetooth",
-    "group/hardware",
-    "pulseaudio",
-    "tray",
-    "custom/power"
-  ],
+  "modules-left": ["custom/search", "hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": ["network", "bluetooth", "group/hardware", "pulseaudio", "tray", "custom/power"],
   "hyprland/workspaces": {
-    "disable-scroll": true,
+    "disable-scroll": false,
     "all-outputs": true,
     "active-only": false,
     "on-click": "activate",
     "format": "{icon}",
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "on-scroll-up": "hyprctl -q dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'",
+    "on-scroll-down": "hyprctl -q dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
     "format-icons": {
       // Kondisi Status
       "urgent": "",
       "active": "",
       "default": "",
-      "empty": ""
+      "empty": "",
     },
+    "window-rewrite-default": "",
     "window-rewrite": {
       // General Tools
       "class<kitty>": "",
@@ -55,8 +44,8 @@
       "class<.*openvpn.*>": "󰖂",
       "class<forticlient>": "󰖂",
       "class<dbeaver>": "󰆼",
-      "class<mysql-workbench-bin>": "󰆼"
-    }
+      "class<mysql-workbench-bin>": "󰆼",
+    },
   },
   "clock": {
     "format": "  {:%H:%M}",
@@ -70,78 +59,62 @@
         "months": "<span color='#88c0d0'><b>{}</b></span>",
         "days": "<span color='#d8dee9'><b>{}</b></span>",
         "weekdays": "<span color='#81a1c1'><b>{}</b></span>",
-        "today": "<span color='#bf616a'><b><u>{}</u></b></span>"
-      }
+        "today": "<span color='#bf616a'><b><u>{}</u></b></span>",
+      },
     },
     "actions": {
       "on-click": "gnome-calendar",
       "on-click-right": "mode",
       "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down"
-    }
+      "on-scroll-down": "shift_down",
+    },
   },
   "group/hardware": {
     "orientation": "horizontal",
     "drawer": {
       "transition-duration": 500,
       "children-class": "not-memory",
-      "transition-left-to-right": false
+      "transition-left-to-right": false,
     },
     "modules": [
       "custom/system", // Ikon Utama
       "cpu",
       "memory",
       "temperature",
-      "battery"
-    ]
+      "battery",
+    ],
   },
   "custom/system": {
     "format": "󰍛",
-    "tooltip": false
+    "tooltip": false,
   },
   "cpu": {
     "interval": 1,
     "format": " {usage}%",
-    "on-click": "kitty -e btop"
+    "on-click": "kitty -e btop",
   },
   "memory": {
     "format": "󰍛 {used:0.1f}G",
-    "interval": 5
+    "interval": 5,
   },
   "temperature": {
     "critical-threshold": 80,
     "format": "{icon} {temperatureC}°C",
-    "format-icons": [
-      "",
-      "",
-      ""
-    ]
+    "format-icons": ["", "", ""],
   },
   "battery": {
     "states": {
       "good": 95,
       "warning": 30,
-      "critical": 15
+      "critical": 15,
     },
     "format": "{icon}  {capacity}%",
     "format-charging": "󱐋 {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{icon} {time}",
-    "format-icons": [
-      "󰂎",
-      "󰁺",
-      "󰁻",
-      "󰁼",
-      "󰁽",
-      "󰁾",
-      "󰁿",
-      "󰂀",
-      "󰂁",
-      "󰂂",
-      "󰁹"
-    ],
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "on-click": "gnome-power-statistics",
-    "tooltip-format": "{timeTo}"
+    "tooltip-format": "{timeTo}",
   },
   "network": {
     "format-wifi": " ",
@@ -149,7 +122,7 @@
     "format-disconnected": "󰖪",
     "tooltip-format": "󰩟 {ipaddr}/{cidr}\n {essid} ({signalStrength}%)\n󰇚 {bandwidthDownBytes}  󰕒 {bandwidthUpBytes}",
     "on-click": "nm-connection-editor",
-    "interval": 2
+    "interval": 2,
   },
   "bluetooth": {
     "format": " {status}",
@@ -158,23 +131,25 @@
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "on-click": "blueman-manager"
+    "on-click": "blueman-manager",
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-muted": "󰝟",
     "format-icons": {
-      "default": [
-        "",
-        "",
-        ""
-      ]
+      "default": ["", "", ""],
     },
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
   },
   "custom/power": {
     "format": "",
     "on-click": "wlogout",
-    "tooltip": false
+    "tooltip": false,
+  },
+  "custom/search": {
+    "format": " ",
+    "tooltip": true,
+    "tooltip-format": "Search Apps",
+    "on-click": "pkill wofi || wofi --show drun",
   },
 }
