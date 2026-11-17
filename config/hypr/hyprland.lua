@@ -161,6 +161,8 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind("CTRL + " .. mainMod .. " + F", hl.dsp.exec_cmd(firefox))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.local/bin/wallpicker.sh"))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("~/.local/bin/diceroll.sh"))
+hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("~/.local/bin/scoundrel_menu.sh"))
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind("CTRL + " .. mainMod .. " + P", hl.dsp.exec_cmd("nwg-displays"))
@@ -269,6 +271,16 @@ hl.window_rule({
 	},
 	move = { 20, "monitor_h-120" },
 	float = true,
+})
+
+hl.window_rule({
+	name = "scoundrel-floating-tui",
+	match = {
+		class = "scoundrel-tui",
+	},
+	float = true,
+	size = { 1060, 720 },
+	center = true,
 })
 
 -- #################
