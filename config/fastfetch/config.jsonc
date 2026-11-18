@@ -72,11 +72,6 @@
       "format": "{used} / {total} ({percentage})",
     },
     {
-      "type": "memory",
-      "key": "│ 󰍛 Memory ",
-      "format": "{used} / {total} ({percentage})",
-    },
-    {
       "type": "cpuusage",
       "key": "│ 󰓅 Load   ",
       "format": "{avg}",
